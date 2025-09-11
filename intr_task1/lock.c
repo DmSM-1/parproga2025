@@ -17,7 +17,7 @@ int main(int argc, char** argv){
     int num = 1;
     int order = 0;
 
-    #pragma omp parallel
+    #pragma omp parallel 
     {
         while (1){
             omp_set_lock(&my_lock);

@@ -39,15 +39,13 @@ int main(int argc, char** argv){
     sum = 0.0;
 
     start = omp_get_wtime();
-    #pragma omp parallel reduction(+:sum)
+    #pragma omp parallel
     {
-        double local_sum = 0.0;
         const int thread_num = omp_get_thread_num();
         for (int i = 0; i < cycles; i++)
-            local_sum += 1.0/(thread_num*cycles+i+1);
+            sum += 1.0/(thread_num*cycles+i+1);
         if (thread_num < remain)
-            local_sum += 1.0/(whole_part+thread_num);
-        sum += local_sum;
+            sum += 1.0/(whole_part+thread_num);
     }
     end = omp_get_wtime();
 
