@@ -6,6 +6,7 @@
 static int* buf = NULL;
 static int task_size;
 
+
 void merge_sort(int* arr, int left, int right){
     int len = right - left + 1;
     if (len>1){

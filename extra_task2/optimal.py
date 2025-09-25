@@ -7,7 +7,7 @@ import math
 import numpy as np
 
 # --- Настройки ---
-EXECUTABLE = "./sort"          # Имя вашей скомпилированной программы
+EXECUTABLE = "./sort_m"          # Имя вашей скомпилированной программы
 INPUT_FILE = "data"            # Исходный файл с данными
 OUTPUT_FILE = "result"         # Файл для результата сортировки
 NUM_ELEMENTS = 2**22           # 1,048,576 элементов, как в задании
