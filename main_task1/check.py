@@ -28,4 +28,4 @@ for i in range(size**2):
 arr = np.array(arr)
 R = arr.reshape(size, size)
 
-print(np.max(np.abs(C-R)))
+print(f"MEAN_ERROR {np.mean(np.abs(C-R)/np.abs(C))}")

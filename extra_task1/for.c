@@ -121,7 +121,7 @@ int main(int argc, char** argv){
         block[i] = 0;
     }
     start = omp_get_wtime();
-    #pragma omp parallel for schedule(guided)
+    #pragma omp parallel for schedule(guided, 1)
     for(int i = 0; i < cycles; i++){
         one_to_n_series(i*10, 1.2345);
         block[(cycles+1)*omp_get_thread_num()] ++;
@@ -129,7 +129,27 @@ int main(int argc, char** argv){
     }
     end = omp_get_wtime();
 
-    printf("(guided    ): time: %lf\n", end-start);
+    printf("(guided 1  ): time: %lf\n", end-start);
+    if (argc < 2){
+    print_blocks(cycles, executers, block);
+    printf("\n");
+    }
+
+
+    //guided
+    for(int i = 0; i < (cycles+1)*executers; i++){
+        block[i] = 0;
+    }
+    start = omp_get_wtime();
+    #pragma omp parallel for schedule(guided, 4)
+    for(int i = 0; i < cycles; i++){
+        one_to_n_series(i*10, 1.2345);
+        block[(cycles+1)*omp_get_thread_num()] ++;
+        block[(cycles+1)*omp_get_thread_num()+block[(cycles+1)*omp_get_thread_num()]] = i;
+    }
+    end = omp_get_wtime();
+
+    printf("(guided 4  ): time: %lf\n", end-start);
     if (argc < 2){
     print_blocks(cycles, executers, block);
     printf("\n");

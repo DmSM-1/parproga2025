@@ -276,7 +276,7 @@ int main(int argc, char** argv){
     fclose(file_D);
 
     FILE* file_LOG = fopen(argv[4], "a");
-    fprintf(file_LOG, "parallel:%d %.9lf ", size, time_dif(ts[0], ts[1]));
+    fprintf(file_LOG, "PARALLEL+STRAS+TRANS:%d %.9lf ", size, time_dif(ts[0], ts[1]));
 
     fclose(file_LOG);
 
