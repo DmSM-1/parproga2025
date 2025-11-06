@@ -1,0 +1,27 @@
+{
+    "files.associations": {
+        "time.h": "c",
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "math.h": "c",
+        "cmath": "c",
+        "string.h": "c",
+        "array": "c",
+        "deque": "c",
+        "string": "c",
+        "unordered_map": "c",
+        "vector": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "span": "c",
+        "chrono": "c",
+        "format": "c",
+        "__bit_reference": "c",
+        "__hash_table": "c",
+        "__split_buffer": "c",
+        "__tree": "c",
+        "iterator": "c",
+        "map": "c",
+        "variant": "c"
+    }
+}
